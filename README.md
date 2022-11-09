@@ -2,7 +2,7 @@
 
 _(This package is still developing and not formally tested. Please report any potential issues. Constantly reshaping the tensor could be inefficient and not suitable for high-performance computing)_
 
-A Python package for automatically and minimally expanding tensors for `__setitems()__` operations based on NumPy. You don't need to worry about tensor shape initialization, `reshape()`, or `expand_dims()` anymore as if the tensor has an infinite size. Both basic (integer, slice, `np.newaxis`, ellipsis) and advanced (integer & boolean array) indexing are supported (refer to [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html#)). 
+A Python package for automatically and minimally expanding tensors for `__setitem()__` operations based on NumPy. You don't need to worry about tensor shape initialization, `reshape()`, or `expand_dims()` anymore as if the tensor has an infinite size. Both basic (integer, slice, `np.newaxis`, ellipsis) and advanced (integer & boolean array) indexing are supported (refer to [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html#)). 
 
 You can also configure a `DynamicTensor` to adapt the tensor type to the new value to avoid `astype()` (enabled by default).
 
@@ -13,7 +13,7 @@ Requires Python 3.6+ and NumPy 1.16+.
 ```bash
 pip install dynamic-tensor
 # or using conda
-conda install dynamic-tensor
+conda install -c eurekazheng dynamic-tensor
 ```
 
 Or install from source:

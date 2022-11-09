@@ -1,0 +1,35 @@
+{% set name = "dynamic-tensor" %}
+{% set version = "0.0.2" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: eab6b95099b52a7fa8e11068687a6159474e4db854504ae99c465bf9d111765b
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  build:
+    - pip
+    - python
+  run:
+    - numpy >=1.16
+    - python
+
+about:
+  home: "https://github.com/eurekazheng/dynamic-tensor"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "Automatically and minimally expanding tensor for __setitem()__ operations based on NumPy."
+  doc_url: "https://github.com/eurekazheng/dynamic-tensor"
+  dev_url: "https://github.com/eurekazheng/dynamic-tensor"
+
+extra:
+  recipe-maintainers:
+    - eurekazheng
